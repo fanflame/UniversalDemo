@@ -1,46 +1,21 @@
-if(isChatLib.toBoolean()){
-    apply plugin: 'com.android.library'
-}else{
-    apply plugin: 'com.android.application'
-}
-
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion compile_Sdk_Version.toInteger()
-
-
-
     defaultConfig {
-        if(!isChatLib){
-            applicationId "com.fanyiran.chat"
-        }
+        applicationId "com.fanyiran.component"
         minSdkVersion min_Sdk_Version.toInteger()
         targetSdkVersion target_Sdk_Version.toInteger()
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    sourceSets {
-        main {
-            if(isChatLib.toBoolean()){
-                manifest.srcFile 'src/main/libmainfest/AndroidManifest.xml'
-            }else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-            }
-
-        }
-    }
-
 }
 
 dependencies {
@@ -50,5 +25,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(':componentlib')
+    implementation project(':Demo_Compoent:Component_Lib')
+    if(isLoginLib.toBoolean()){
+        implementation project(':Demo_Compoent:Compoent_login')
+    }
+    if(isChatLib.toBoolean()){
+        implementation project(':Demo_Compoent:Compoent_chat')
+    }
 }

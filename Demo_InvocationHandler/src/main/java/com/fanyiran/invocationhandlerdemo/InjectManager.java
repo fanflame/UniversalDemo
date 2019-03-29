@@ -1,11 +1,8 @@
 package com.fanyiran.invocationhandlerdemo;
 
-import android.view.View;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
 
 public class InjectManager {
     private static final InjectManager ourInstance = new InjectManager();
