@@ -5,6 +5,6 @@ package com.fanyiran.hotfixdemo;
  */
 public class Utils {
     public static int calulate(){
-        return 10/0;
+        return 10/1;
     }
 }
