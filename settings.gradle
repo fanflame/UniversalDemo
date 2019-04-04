@@ -1,1 +1,9 @@
-include ':app', ':Demo_CustomRecycleView', ':Demo_Compoent:Compoent_chat', ':Demo_Compoent:Component_Lib', ':Demo_Compoent:Compoent_login', ':Demo_Compoent', ':Demo_AnimatorPath', ':Demo_DynamicProxyImpl', ':Demo_DynamicProxyImpl:DynamicProxyImpl_lib', ':Demo_HotFix', ':Demo_IncrementalUpdate', ':Demo_InvocationHandler'
+include ':app', ':Demo_Gradleplugin',
+        ':Demo_CustomRecycleView',
+        ':Demo_Compoent:Compoent_chat', ':Demo_Compoent:Component_Lib', ':Demo_Compoent:Compoent_login', ':Demo_Compoent',
+        ':Demo_AnimatorPath',
+        ':Demo_DynamicProxyImpl', ':Demo_DynamicProxyImpl:DynamicProxyImpl_lib',
+        ':Demo_HotFix',
+        ':Demo_IncrementalUpdate',
+        ':Demo_InvocationHandler',
+        ':Demo_Libjpeg'

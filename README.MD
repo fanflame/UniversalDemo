@@ -9,6 +9,7 @@
 - ## 热更新:Demo_HotFix
 - ## 增量更新:Demo_IncrementalUpdate
 - ## EventBus原理:Demo_InvocationHandler
+- ## 图片哈夫曼编码:Demo_LibJpeg
 
 
 # TODO

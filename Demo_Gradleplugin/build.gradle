@@ -1,0 +1,29 @@
+apply plugin: 'groovy'
+//添加maven plugin, 用于发布我们的jar
+apply plugin: 'maven'
+
+dependencies {
+    implementation 'com.android.tools.build:gradle:3.3.2'
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:transform-api:1.5.0'
+    implementation 'javassist:javassist:3.12.1.GA'
+    implementation 'commons-io:commons-io:2.5'
+}
+
+repositories {
+    mavenCentral()
+}
+//设置maven deployer
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //设置插件的GAV参数
+            pom.groupId = 'com.fanyiran.gradle_plugindemo'
+            pom.artifactId = 'pluginDemo'
+            pom.version = 1.0
+            //文件发布到下面目录
+            repository(url: uri('../repo'))
+        }
+    }
+}
