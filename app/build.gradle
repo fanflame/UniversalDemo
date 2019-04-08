@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
 
-//testCreateJavaConfig{
-//    str = "动态生成Java类的字符串"
-//}
+testCreateJavaConfig {
+    str = "动态生成Java类的字符串"
+}
 
