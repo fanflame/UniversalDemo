@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fanyiran.hermes_lib">
+
+    <application>
+        <service android:name=".ProcessService">
+            <intent-filter>
+                <action android:name="com.fanyiran.hermes_lib.ProcessService"/>
+            </intent-filter>
+
+        </service>
+    </application>
+</manifest>
