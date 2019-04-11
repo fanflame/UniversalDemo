@@ -1,4 +1,4 @@
-include ':app', ':Demo_Gradleplugin', ':Demo_Hermes', ':Demo_Hermes_Lib', ':Demo_Hermes:Hermes_Lib',
+include ':app', ':Demo_Gradleplugin', ':Demo_Hermes', ':Demo_Hermes:Hermes_Lib', ':Demo_Mutilthread',
         ':Demo_CustomRecycleView',
         ':Demo_Compoent:Compoent_chat', ':Demo_Compoent:Component_Lib', ':Demo_Compoent:Compoent_login', ':Demo_Compoent',
         ':Demo_AnimatorPath',

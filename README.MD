@@ -11,9 +11,11 @@
 - ## Demo_InvocationHandler:EventBus原理
 - ## Demo_LibJpeg:图片哈夫曼编码
 - ## Demo_Gradleplugin:gradle插件以及使用Javassit操作class
+- ## Demo_MutilThread:自定义lock实现线程安全
 
 
 # TODO
 - 动态代理未完成
 - 自定义RecycleView待完善，滑动有问题
 - 热更新
+- hermes
