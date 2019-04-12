@@ -2,8 +2,6 @@ package com.fanyiran.demo_mutilthread;
 
 import android.support.annotation.NonNull;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;

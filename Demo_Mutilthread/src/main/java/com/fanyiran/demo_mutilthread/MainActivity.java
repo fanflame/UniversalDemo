@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         // NOTE: 线程不安全
 //        final Add add = new IntAdd();
         // NOTE: Atomi
-        final Add add = new AtomicAdd();
+//        final Add add = new AtomicAdd();
         // NOTE: 自定义锁实现Lock 与 unLock
-//        final Add add = new CustomLockAdd();
+        final Add add = new CustomLockAdd();
         for (int i = 0; i < 20000; i++) {
             new Thread(new Runnable() {
                 @Override
