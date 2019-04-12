@@ -9,10 +9,11 @@ public class CommunicationBean {
     public static final String TYPE_GETINSTANCE = "TYPE_GETINSTANCE";
     public static final String TYPE_METHOD = "TYPE_METHOD";
 
+
     /**
      * className :
      * methodName :
-     * methodParams : [{"paramsClass":"params"}]
+     * methodParams : [{"paramsClass":"class","paramObject":"object"}]
      * type : 1
      */
 
@@ -55,10 +56,12 @@ public class CommunicationBean {
 
     public static class MethodParamsBean {
         /**
-         * paramsClass : params
+         * paramsClass : class
+         * paramObject : object
          */
 
         private String paramsClass;
+        private String paramObject;
 
         public String getParamsClass() {
             return paramsClass;
@@ -66,6 +69,14 @@ public class CommunicationBean {
 
         public void setParamsClass(String paramsClass) {
             this.paramsClass = paramsClass;
+        }
+
+        public String getParamObject() {
+            return paramObject;
+        }
+
+        public void setParamObject(String paramObject) {
+            this.paramObject = paramObject;
         }
     }
 }

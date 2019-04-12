@@ -22,6 +22,7 @@
     <Button
         android:onClick="OnGetOtherProgressPeople"
         android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:text="获取其他线程People" />
 

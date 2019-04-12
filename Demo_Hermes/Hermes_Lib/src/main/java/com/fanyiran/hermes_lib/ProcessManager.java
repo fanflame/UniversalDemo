@@ -12,6 +12,8 @@ import com.google.gson.Gson;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by fanqiang on 2019/4/11.
@@ -93,8 +95,18 @@ public class ProcessManager {
             bean.setClassName(annotation.value());
             bean.setMethodName(method.getName());
             bean.setType(CommunicationBean.TYPE_METHOD);
-            // TODO: 2019/4/11 添加参数
-//            bean.setMethodParams();
+            Class<?>[] parameterTypes = method.getParameterTypes();
+            if (parameterTypes != null) {
+                List<CommunicationBean.MethodParamsBean> methodParams = new ArrayList<>(args.length);
+                CommunicationBean.MethodParamsBean temp;
+                for (int i = 0; i < parameterTypes.length; i++) {
+                    temp = new CommunicationBean.MethodParamsBean();
+                    temp.setParamsClass(parameterTypes[i].getName());
+                    temp.setParamObject(gson.toJson(args[i]));
+                    methodParams.add(temp);
+                }
+                bean.setMethodParams(methodParams);
+            }
             String content = gson.toJson(bean);
             try {
                 String result = personInterface.sendString(content);

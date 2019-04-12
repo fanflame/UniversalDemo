@@ -36,6 +36,6 @@ public class SecondActiivty extends AppCompatActivity {
     }
 
     public void OnSetPeopleClick(View view) {
-        PeopleManager.getInstance().setPeople(new People("hahaha","hehehe"));
+            ProcessManager.getInstance().getInstance(IPeopleManager.class).setPeople(new People("hahaha22","hehehe2222"));
     }
 }

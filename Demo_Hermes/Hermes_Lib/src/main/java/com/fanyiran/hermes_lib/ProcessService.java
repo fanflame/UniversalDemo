@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 /**
  * Created by fanqiang on 2019/4/11.
@@ -68,6 +69,18 @@ public class ProcessService extends Service {
     private Object[] getParams(CommunicationBean bean) {
         if(bean == null)
             return null;
-        return null;
+        List<CommunicationBean.MethodParamsBean> methodParams = bean.getMethodParams();
+        if (methodParams == null) {
+            return null;
+        }
+        Object[] result = new Object[methodParams.size()];
+        for (int i = 0; i < methodParams.size(); i++) {
+            try {
+                result[i] = gson.fromJson(methodParams.get(i).getParamObject(),Class.forName(methodParams.get(i).getParamsClass()));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 }
