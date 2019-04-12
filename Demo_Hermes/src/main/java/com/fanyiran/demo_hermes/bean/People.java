@@ -1,35 +1,30 @@
 package com.fanyiran.demo_hermes.bean;
 
 /**
- * Created by fanqiang on 2019/4/11.
+ * Created by fanqiang on 2019/4/12.
  */
-public class People implements IPeople {
+public class People {
     private String name;
     private String pwd;
-    private static People people;
-    private People(){}
-    public static People getInstance() {
-        if(people == null)
-            people = new People();
-        return people;
-    }
 
-    @Override
-    public void setPeople(String name,String pwd) {
+    public People(String name, String pwd) {
         this.name = name;
         this.pwd = pwd;
-    }
-
-    @Override
-    public People getPeople() {
-        return people;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getPwd() {
         return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 }

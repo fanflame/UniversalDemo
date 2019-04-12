@@ -29,6 +29,7 @@ public class ProcessService extends Service {
                 CommunicationBean bean = gson.fromJson(content, CommunicationBean.class);
                 switch (bean.getType()) {
                     case CommunicationBean.TYPE_GETINSTANCE:
+                        //在该demo中，实例话化以下实例在与MainActivity在同一个进程中（单例）
                         Object instance = CacheCenter.getInstance().getInstance(bean.getClassName());
                         if(instance == null){
                             try {

@@ -27,7 +27,10 @@ proporty动画可以用在非ui类中处理ui属性。
 
 自定义Lock使用LockSupport.park()与LockSupport.unPark(thread)来阻塞和释放锁。
 ## Demo_Hermes:饿了么进程间通信
+要点：涉及AIDL，注解，反射，动态代理；
 
+需要注意的是其他进程调用ProgressManager.getInstance().getInstance(Ipeople.class)通过动态代理返回这个实例在主进程的单例
+调用该实例也就是通过动态代理AIDL反射调用主进程的方法
 
 # TODO
 - 动态代理未完成

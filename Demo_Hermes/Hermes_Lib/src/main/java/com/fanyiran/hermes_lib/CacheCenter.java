@@ -20,7 +20,7 @@ public class CacheCenter {
     }
 
     public <T> void regist(Class<T> peopleClass) {
-        if (methodMap == null || methodMap.get(peopleClass.getName()) != null) {
+        if (methodMap != null && methodMap.get(peopleClass.getName()) != null) {
             return;
         }
         if (methodMap == null) {
@@ -31,7 +31,11 @@ public class CacheCenter {
         for (Method method : methods) {
             mapTemp.put(method.getName(),method);
         }
-        methodMap.put(peopleClass.getName(),mapTemp);
+        ChildAnnotation annotation = peopleClass.getAnnotation(ChildAnnotation.class);
+        if (annotation == null) {
+            throw new IllegalStateException("接口未添加注解");
+        }
+        methodMap.put(annotation.value(),mapTemp);
     }
     public Object getInstance(String className) {
         if(objectMap == null)

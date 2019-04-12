@@ -29,6 +29,7 @@ public class ProcessManager {
     private ProcessManager() {
     }
 
+    //该方法在非主进程中调用
     public <T> T getInstance(Class<T> tClass) {
         if (gson == null) {
             gson = new Gson();
@@ -97,8 +98,8 @@ public class ProcessManager {
             String content = gson.toJson(bean);
             try {
                 String result = personInterface.sendString(content);
-                return gson.fromJson(result,tClass);
-            } catch (RemoteException e) {
+                return gson.fromJson(result,method.getReturnType());
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
