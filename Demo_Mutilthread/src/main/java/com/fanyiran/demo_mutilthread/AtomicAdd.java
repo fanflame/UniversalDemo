@@ -10,10 +10,7 @@ public class AtomicAdd implements Add {
 
     @Override
     public void increase() {
-        int request;
-        do {
-            request = atomicInteger.get();
-        }while(!atomicInteger.compareAndSet(request,request + 1));
+        atomicInteger.getAndIncrement();
     }
 
     @Override
