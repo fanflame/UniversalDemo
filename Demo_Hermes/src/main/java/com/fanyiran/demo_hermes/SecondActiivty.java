@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import com.fanyiran.demo_hermes.bean.IPeopleManager;
 import com.fanyiran.demo_hermes.bean.People;
-import com.fanyiran.demo_hermes.bean.PeopleManager;
 import com.fanyiran.hermes_lib.ProcessManager;
 
 /**
